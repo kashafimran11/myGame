@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Dice Roller Game</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <style>
+        body{
+            /* background: linear-gradient(135deg, #4f00ff, #00d4ff); */
+            background-color: #1d0552;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            font-family: Arial, sans-serif;
+        }
+
+        /* MAIN WRAPPER */
+        .main-wrapper{
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 60px; /* spacing between game and about */
+            padding-top: 40px;
+            padding-bottom: 40p
+            
+            x;
+        }
+
+        /* GAME BOX */
+        .game-box{
+            width: 90%;
+            max-width: 450px;
+            padding: 30px;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 25px rgba(255,255,255,0.45);
+            text-align: center;
+        }
+
+        h1{
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            text-shadow: 0 0 15px #ffffff;
+        }
+
+        input{
+            width: 80%;
+            padding: 12px;
+            border-radius: 12px;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            margin-top: 15px;
+            text-align: center;
+            background: rgba(255,255,255,0.30);
+            color: white;
+        }
+
+        input::placeholder{
+            color: #f0f0f0;
+        }
+
+        button{
+            margin-top: 20px;
+            padding: 12px 26px;
+            border: none;
+            border-radius: 12px;
+            background-color: #ffffff;
+            color: #4f00ff;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.4s;
+            box-shadow: 0 0 15px rgba(255,255,255,0.6);
+        }
+
+        button:hover{
+            background: #f3f3f3;
+            transform: scale(1.07);
+            box-shadow: 0 0 30px #ffffff;
+        }
+
+        #diceresult{
+            margin-top: 15px;
+            font-size: 22px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 0 10px #fff;
+        }
+
+        #diceimages img{
+            width: 80px;
+            margin: 8px;
+            filter: drop-shadow(0px 0px 15px yellow);
+            transition: 0.3s;
+        }
+
+        #diceimages img:hover{
+            transform: rotate(10deg) scale(1.1);
+        }
+   body.dark-mode {
+                background-color: #000000;
+                color: #f5f5f5;
+
+            }
+              body.dark-mode button {
+                background-color: #444;
+                color: #f5f5f5;
+border: none;
+            }
+        /* ABOUT BOX */
+        .about-box{
+            width: 90%;
+            max-width: 800px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 0 25px rgba(255,255,255,0.45);
+            text-align: center;
+        }
+
+        .about-head{
+            color: #fff;
+            font-size: 35px;
+            font-weight: bold;
+            text-shadow: 0 0 15px #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .about-text{
+            color: white;
+            font-size: 17px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .about-img{
+            width: 100%;
+            filter: drop-shadow(0 0 30px yellow);
+        }
+
+        /* Responsive */
+        @media(max-width: 600px){
+            h1{ font-size: 30px; }
+            .about-head{ font-size: 28px; }
+            input{ font-size: 16px; }
+            button{ font-size: 16px; padding: 10px 20px; }
+            #diceimages img{ width: 60px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="main-wrapper">
+    <button  class="reset" id="togglebtn">DarkMode</button>
+    <!-- GAME BOX -->
+    <div class="game-box">
+        <h1>Dice Roller Game</h1>
+
+        <input type="number" id="DiceNumber" placeholder="How many dice?" min="1" value="1">
+
+        <button onclick="rolldice()">Roll Dice</button>
+
+        <div id="diceresult"></div>
+        <div id="diceimages"></div>
+    </div>
+
+    <!-- ABOUT BOX -->
+    <div class="about-box">
+        <h1 class="about-head">More About My Dice Roller Game</h1>
+
+        <div class="row align-items-center">
+            
+            <div class="col-lg-6 text-center">
+                <img class="about-img" src="./images/360_F_1566866631_uDCNU4i1vBMb1kEQuRDuoas76ahBZqgG-removebg-preview.png" alt="">
+            </div>
+
+            <div class="col-lg-6 mt-4">
+                <h2 class="about-head" style="font-size: 28px;">How to Play this Game</h2>
+                
+                <p class="about-text">
+                    Dice Roller ek fun aur quick game hai jahan ek click par random number generate hota hai!
+                    Challenge your friends, test your luck, aur har roll ke saath excitement feel karein.
+                    Bas dice number enter karein, button dabayein — aur dekhte hain kiski luck strong hai!
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</div> <!-- END main-wrapper -->
+
+<!-- JAVASCRIPT -->
+<script>
+    function rolldice() {
+        const numberofdice = document.getElementById("DiceNumber").value;
+        const Result = document.getElementById("diceresult");
+        const Images = document.getElementById("diceimages");
+
+        const values = [];
+        const pictures = [];
+
+        Images.innerHTML = "";
+
+        for (let i = 0; i < numberofdice; i++) {
+            const value = Math.floor(Math.random() * 6) + 1;
+            values.push(value);
+
+            pictures.push(`<img src="dice_images/${value}.png">`);
+        }
+
+        Result.textContent = `Dice: ${values.join(", ")}`;
+        Images.innerHTML = pictures.join("");
+    }
+
+
+
+
+
+
+
+    const togglebtn = document.getElementById('togglebtn');
+
+        togglebtn.addEventListener('click' , () =>{
+            document.body.classList.toggle('dark-mode') ;
+            if(document.body.classList.contains('dark-mode') ){
+                togglebtn.textContent = "switch to light mode";
+
+            }
+            else{
+                togglebtn.textContent = "switch to  dark mode";
+            }
+        }) ;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,624 @@
+
+<html lang="en">
+<head>
+    <title>Gaming Website</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* ---------------- GLOBAL BACKGROUND FIX ---------------- */
+        body{
+          background: linear-gradient(135deg, #0d052b 0%, #4f00ff 35%, #00d4ff 70%, rgb(206, 98, 143) 100%);
+          background-attachment: fixed;
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+        }
+
+        /* ---------------- NAVBAR ------------------- */
+        .site-nav{
+            background-color: #1d0b47;
+            padding: 10px 20px;
+        }
+
+        .nav-inner{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo-img{
+            height: 70px;
+        }
+
+        /* Search */
+        .search-box{
+          width: 280px;
+          background: #0d052b;
+          border-radius: 50px;
+          padding: 3px;
+          display: flex;
+          align-items: center;
+          border: 2px solid #4f00ff;
+          overflow: hidden;
+        }
+
+        .search-box input{
+          flex: 1;
+          padding: 8px 12px;
+          border: none;
+          outline: none;
+          background: transparent;
+          color: white;
+          font-size: 16px;
+        }
+
+        .search-box input::placeholder{
+          color: #aaa;
+        }
+
+        .search-btn{
+          background: linear-gradient(135deg, #0d052b, #4f00ff);
+          border: none;
+          color: white;
+          padding: 8px 14px;
+          font-size: 18px;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .search-btn:hover{
+          background: linear-gradient(135deg,  #4f00ff , #0d052b );
+        }
+
+        .btn1{
+            background-color: #4f00ff;
+            color: white;
+            border: 2px solid #1b1142;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 6px 16px;
+            border-radius: 20px;
+        }
+
+        .btn1:hover{
+          background: linear-gradient(135deg,  #4f00ff , #0d052b );
+        }
+
+        /* =================== HERO SECTION ===================== */
+        .nav-outer{
+            display: flex;
+            /* flex-direction: column; */
+            background-color: #0d052b;
+            align-items: center;
+            justify-content: center;
+            padding: 25px 10px;
+        }
+
+        .headiing{
+          font-size: 40px;
+          font-weight: 600;
+          color: #ffffff;
+          padding: 10px;
+          letter-spacing: 2px;
+          text-align: center;
+          text-shadow: 
+            0 0 10px #4f00ff,
+            0 0 20px #4f00ff,
+            0 0 30px #00d4ff,
+            0 0 40px #00d4ff;
+        }
+        .game-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    width: 200px;
+    border: none;
+    text-align: center;
+    border-radius: 40px;
+    color: white;
+    /* background: linear-gradient(135deg, #4f00ff, #00d4ff); */
+    background-color: #008cff;
+    text-decoration: none;
+    box-shadow: 0 0 10px #4f00ff, 0 0 20px #00d4ff;
+    transition: 0.3s ease-in-out;
+}
+
+/* .game-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 
+        0 0 15px #4f00ff,
+        0 0 25px #00d4ff,
+        0 0 35px #00d4ff;
+    background: linear-gradient(135deg, #00d4ff, #4f00ff);
+} */
+
+
+        .btn2{
+          background: linear-gradient(135deg, #4f00ff, #00d4ff);
+          color: white;
+          padding: 12px 30px;
+          font-size: 18px;
+          font-weight: 700;
+          border: none;
+          border-radius: 50px;
+          cursor: pointer;
+          letter-spacing: 1px;
+          transition: 0.3s ease;
+          margin-top: 6px;
+          margin-left: 10px;
+        }
+
+        /* -------------- BANNER IMAGE -------------- */
+        .banner-img img{
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: cover;
+        }
+
+        /* -------------- TOP GAMES HEADING -------------- */
+        .headingg{
+            color: white;
+            text-align: center;
+            font-weight: 700;
+            font-size: 35px;
+            margin-top: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        /* -------------- CARD STYLING -------------- */
+        .card{
+            background-color: #10053559;      
+            border: 1px solid white;
+            box-shadow: 7px 6px 5px 0.5px;
+            margin: 15px;
+            color: white;
+            height: 75vh;
+
+            
+        }
+
+        .card img{
+            width: 100%;
+            height:auto;
+        }
+
+        .heading1{
+            font-weight: 300;
+            font-size: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-top: 10px;
+        }
+         .gaming-accordion {
+        background: linear-gradient(135deg, #0d0d0d, #1a0033, #000814);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 0 40px #5200ff88;
+    }
+
+    /* Accordion Item */
+    .gaming-accordion .accordion-item {
+        background: #0a0a0a;
+        border: 2px solid #4f00ff;
+        border-radius: 12px;
+        margin-bottom: 18px;
+        box-shadow: 0 0 18px #4f00ff88;
+    }
+
+    /* Accordion Button (Header) */
+    .gaming-accordion .accordion-button {
+        background: #140026 !important;
+        color: #eaeaea;
+        font-size: 1.7rem;
+        padding: 22px;
+        border-radius: 12px;
+        font-weight: 700;
+        text-shadow: 0 0 10px #8b42ff, 0 0 15px #00d4ff;
+        box-shadow: inset 0 0 18px #4f00ff;
+    }
+
+    /* When open */
+    .gaming-accordion .accordion-button:not(.collapsed) {
+        background: #26004a !important;
+        color: #00eaff;
+        text-shadow: 0 0 15px #00eaff, 0 0 20px #8b42ff;
+        box-shadow: inset 0 0 25px #6b00d8;
+    }
+
+    /* Accordion Body */
+    .gaming-accordion .accordion-body {
+        background: #080014;
+        color: #d5d5d5;
+        padding: 26px;
+        font-size: 1.2rem;
+        border-radius: 0 0 12px 12px;
+        box-shadow: inset 0 0 20px #410082;
+    }
+
+    /* Heading */
+    .heading {
+        text-align: center;
+        color: #fff;
+        font-size: 3rem;
+        margin-bottom: 10px;
+        text-shadow: 0 0 25px #5a00ff, 0 0 35px #00eaff;
+        font-weight: 700;
+    }
+     
+    .last {
+        font-size: 1.5rem;
+        margin: 0;
+    }
+ .image{
+        height: 90px;
+    } 
+    .container{
+      margin-bottom: 30px;
+    }
+    #myimg{
+       height: 180px;
+    }
+        /* -------------------- RESPONSIVE ---------------------- */
+        
+        /* Tablet */
+        @media(max-width: 900px){
+            .nav-inner{
+                gap: 10px;
+            }
+
+            .search-box{
+                width: 220px;
+            }
+
+            .logo-img{
+                height: 60px;
+            }
+
+            .col-sm-4{
+                width: 50%;
+            }
+        }
+
+        /* Mobile */
+        @media(max-width: 600px){
+            .nav-inner{
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .logo-img{
+                height: 55px;
+            }
+
+            .search-box{
+                width: 100%;
+            }
+
+            .btn1{
+                font-size: 15px;
+                padding: 6px 18px;
+            }
+
+            .heading{
+                font-size: 28px;
+            }
+
+            .btn2{
+                font-size: 18px;
+                padding: 10px 22px;
+            }
+
+            .col-sm-4{
+                width: 100%;
+            }
+
+            .heading1{
+                font-size: 23px;
+            }
+
+            .card{
+                margin: 10px 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ============ NAVBAR ============ -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+
+            <a href="index.html" class="logo-link">
+                <img src="./images/download.png" alt="Site Logo" class="logo-img">
+            </a>
+
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button class="search-btn">🔍</button>
+            </div>
+
+            <button class="btn1 "  id="togglebtn">DarkMode</button>
+        </div>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+    <div class="nav-outer">
+        <h1 class="heading">Top pick games for you</h1>
+        <button class="btn2">Let's go</button>
+    </div>
+
+    <!-- ================= Banner ================= -->
+     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./images/ChatGPT Image Nov 28, 2025, 06_44_55 AM.png" class="d-block w-100"     style="height: 630px; object-fit: cover;" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/ChatGPT Image Nov 28, 2025, 06_44_55 AM.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="./images/ChatGPT Image Nov 28, 2025, 06_44_55 AM.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    <!-- <div class="banner-img">
+        <img src="./images/ChatGPT Image Nov 28, 2025, 06_44_55 AM.png" alt="">
+    </div> -->
+
+    <!-- ================= Top Games ================= -->
+    <h1 class="headingg">Top Games</h1>
+
+    <div class="container">
+        <div class="row justify-content-center">
+
+            <!-- Card 1 -->
+            <div class="col-sm-4">
+                <div class="card p-3">
+                    <img src="./images/image-removebg-preview.png" alt="" class="imagee"  style="height: 200px;">
+                    <h1 class="heading1">Guess the fruit</h1>
+                    <p class="card-text">
+                        Dice Roller ek fun aur quick game hai jahan ek click par random number generate hota hai.
+                        Har roll ke saath excitement badhti hai aur aap apni luck ko test kar sakte ho.
+                    </p>
+                    <a href="#" class="game-btn">Play it Now</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-sm-4">
+                <div class="card p-3">
+                    <img src="./images/pngtree-3d-icon-for-secure-login-and-password-entry-png-image_17987726-removebg-preview.png" alt="" >
+                    <h1 class="heading1"> Password Hack</h1>
+                    <p class="card-text">
+                        Ek simple, smooth aur engaging game jise koi bhi enjoy kar sakta hai.
+                        Challenge your friends and beat your own score!
+                    </p>
+                    <a href="./other.html" class="game-btn">Play it Now</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-sm-4">
+                <div class="card p-3 text-center">
+                    <img src="./images/360_F_1566866631_uDCNU4i1vBMb1kEQuRDuoas76ahBZqgG-removebg-preview.png" alt="" >
+                    <h1 class="heading1">Dice Roller Game</h1>
+                    <p class="card-text">
+                        Bas dice dabao aur dekhte hain aaj kiski luck strong hai! Fast, smooth aur random 
+                    </p>
+                  <a href="./d.html" class="game-btn">Play it now</a>
+
+                </div>
+            </div>
+
+ <div class="col-sm-4">
+                <div class="card p-3">
+                    <img src="./images/download (1).png" alt=""  id="myimg" > 
+                    <h1 class="heading1">Tic Tac Toe</h1>
+                    <p class="card-text">
+                        Ek simple, smooth aur engaging game jise koi bhi enjoy kar sakta hai.
+                        Challenge your friends and beat your own score!
+                    </p>
+                    <a href="./tic tac.html" class="game-btn">Play it Now</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+<div class="accordion gaming-accordion" id="accordionExample">
+
+  <h1 class="headiing">🎮 Gaming FAQs</h1>
+
+  <!-- Item 1 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading1">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+        <span class="last">What is this Gaming Platform?</span>
+      </button>
+    </h2>
+    <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        This website contains all your awesome JavaScript games with a full neon gaming design.
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 2 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading2">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+        <span class="last">Where can I play?</span>
+      </button>
+    </h2>
+    <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        You can play on mobile, PC, tablet — everything is fully responsive.
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 3 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading3">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+        <span class="last">Are these games free?</span>
+      </button>
+    </h2>
+    <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Yes, all games added here are 100% free.
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 4 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading4">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
+        <span class="last">Can I add my games?</span>
+      </button>
+    </h2>
+    <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Yes — you can upload any JavaScript game you make.
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 5 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading5">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
+        <span class="last">What games are available?</span>
+      </button>
+    </h2>
+    <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Puzzle, shooter, racing, action — all custom JS games you add!
+      </div>
+    </div>
+  </div>
+
+  <!-- Item 6 -->
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="heading6">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6">
+        <span class="last">Is it safe for kids?</span>
+      </button>
+    </h2>
+    <div id="collapse6" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        Yes — only safe, fun games are added here.
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- ================= Footer ================= -->
+<footer style="background: #0d052b; color: white; padding: 40px 20px; text-align: center; box-shadow: 0 -5px 25px #4f00ff55;">
+    <h2 style="color: #00d4ff; font-size: 28px; margin-bottom: 15px; text-shadow: 0 0 10px #4f00ff, 0 0 20px #00d4ff;">Gaming Hub</h2>
+    <p style="font-size: 16px; margin-bottom: 20px; color: #ccc;">Your one-stop platform for fun and interactive JavaScript games! Play, explore, and enjoy.</p>
+     <p style="color: #aaa; font-size: 14px;">&copy; 2025 Gaming Hub. All Rights Reserved.</p>
+    <!-- Social Links -->
+    <div style="margin-bottom: 25px;">
+        <a href="#" style="margin: 0 10px; color: #00d4ff; font-size: 22px; text-decoration: none;">🐦</a>
+        <a href="#" style="margin: 0 10px; color: #4f00ff; font-size: 22px; text-decoration: none;">📘</a>
+        <a href="#" style="margin: 0 10px; color: #00ffcc; font-size: 22px; text-decoration: none;">📸</a>
+    </div>
+
+   
+</footer>
+
+</body>
+</html>
+
+        </main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+    <script>
+        const togglebtn = document.getElementById('togglebtn');
+
+        togglebtn.addEventListener('click' , () =>{
+            document.body.classList.toggle('dark-mode') ;
+            if(document.body.classList.contains('dark-mode') ){
+                togglebtn.textContent = "switch to light mode";
+
+            }
+            else{
+                togglebtn.textContent = "switch to  dark mode";
+            }
+        }) ;
+    </script>
+</html>
